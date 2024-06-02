@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .slideshow-container {
+            position: relative;
+            max-width: 500px;
+            overflow: hidden;
+            margin-right:auto;
+            margin-left: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .mySlides img {
+            width: 100%;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 5px;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            background: #ddd;
+        }
+        .dot {
+            cursor: pointer;
+            height: 5px;
+            width: 1px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="https://scontent.fbgw66-1.fna.fbcdn.net/v/t39.30808-1/433945647_2530344930471177_4778293220583375181_n.jpg?stp=dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEZpZTzZM3dMKU561W2ZVTa7cnr75dWZLDtyevvl1ZksDI_frIBUBqhkTmxwo7fhFegsuQgX8Tnw8avniaklUBw&_nc_ohc=HOjIVKG3km4Q7kNvgFMekAC&_nc_ht=scontent.fbgw66-1.fna&oh=00_AYDIDZaDLFUJ0XQKd_jIHszcprLVYXWDXZOTHzFUfGF3lg&oe=665FD507" alt="صورة 1">
+    </div>
+    <div class="mySlides">
+        <img src="https://scontent.fbgw66-1.fna.fbcdn.net/v/t31.18172-1/291312_3060461729754_1099057544_o.jpg?stp=c14.14.172.172a_dst-jpg_p200x200&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFzF3lB8-q-vjMpl59RQsvdp4Ou1uIz-a2ng67W4jP5rfrvBKyXb5PKHMMz5v4VxZFeL4BFPRtV9Xpa36qYlpds&_nc_ohc=_0MYOTfaXHAQ7kNvgFU9Fek&_nc_ht=scontent.fbgw66-1.fna&oh=00_AYDJs6ErUsSFbcXUA5KpZyVzYIYr5afGi9xNA9Br0_Cr_A&oe=668171E3" alt="صورة 2">
+    </div>
+    <div class="mySlides">
+      <img src="https://cdnx.uobabylon.edu.iq/avatars/Znuck6p3n01TX0LMjhLA.jpg">
+    </div>
+    <div class="mySlides">
+      <img src="https://cdnx.uobabylon.edu.iq/avatars/kLSfd8o140Wtx3s73eYlpg.jpg">
+    </div>
+    <div class="mySlides">
+      <img src="https://cdnx.uobabylon.edu.iq/avatars/1JwBSttEmE2U2uRXnzlHsw.jpg">
+    </div>
+    <div class="mySlides">
+      <img src="https://cdnx.uobabylon.edu.iq/avatars/IZ1Ax2SKGkKWwAoaCACHMQ.jpg">
+    </div>
+    <div class="mySlides">
+      <img src="https://cdnx.uobabylon.edu.iq/avatars/abbas.jpg">
+    </div><div class="mySlides">
+      <img src="https://cdnx.uobabylon.edu.iq/avatars/u4r73kUr5kiVGqtLedO7AA.jpg">
+    </div>
+  </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+<strong><h1 style="font-size: large;">This is my love: I love you so much Doctor</h1></strong>
+<marquee>
+  <img src="https://cdnx.uobabylon.edu.iq/avatars/Jkkh3GxxMUuvW4IDz4PANg.jpg" height="600px" width="500px" alt="">
+</marquee>
+<script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 3000);
+    }
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+</script>
+</body>
+</html>
